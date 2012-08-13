@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Comprimindo o diretório /usr (Ou como instalar o Ubuntu 10.04 em menos de 1.5 GB)"
+permalink: /comprimindo-o-diretorio-usr-ou-como-instalar-o-ubuntu-10-04-em-menos-de-1-5-gb
 description: ""
 category: 
 tags: []

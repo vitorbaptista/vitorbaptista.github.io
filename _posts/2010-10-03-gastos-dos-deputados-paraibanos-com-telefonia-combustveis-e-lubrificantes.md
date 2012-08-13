@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gastos dos deputados paraibanos com Telefonia, Combustíveis e Lubrificantes"
+permalink: /gastos-dos-deputados-paraibanos-com-telefonia-combustiveis-e-lubrificantes
 description: ""
 category: 
 tags: []

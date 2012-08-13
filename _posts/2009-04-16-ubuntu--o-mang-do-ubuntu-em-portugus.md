@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Ubuntu – O mangá do Ubuntu em Português"
+title: "Ubunchu – O mangá do Ubuntu em Português"
+permalink: /ubunchu--o-manga-do-ubuntu-em-portugues
 description: ""
 category: 
 tags: []

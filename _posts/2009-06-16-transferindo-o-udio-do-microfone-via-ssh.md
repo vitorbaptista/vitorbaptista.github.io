@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Transferindo o áudio do microfone via SSH"
+permalink: /transferindo-o-audio-do-microfone-via-ssh
 description: ""
 category: 
 tags: []

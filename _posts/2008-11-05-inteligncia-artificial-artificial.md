@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Inteligência Artificial Artificial"
+permalink: /inteligencia-artificial-artificial
 description: ""
 category: 
 tags: []

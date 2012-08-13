@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Estatísticas Preliminares do Google Summer of Code 2009"
+permalink: /estatisticas-preliminares-do-google-summer-of-code-2009
 description: ""
 category: 
 tags: []

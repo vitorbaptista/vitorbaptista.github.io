@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Redirecionando e mails do seu domínio para o mailinator"
+title: "Redirecionando emails do seu domínio para o mailinator"
+permalink: /redirecionando-emails-do-seu-dominio-para-o-mailinator
 description: ""
 category: 
 tags: []

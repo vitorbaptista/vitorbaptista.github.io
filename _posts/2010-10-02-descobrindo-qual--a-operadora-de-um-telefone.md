@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Descobrindo qual é a operadora de um telefone"
+permalink: /descobrindo-qual-e-a-operadora-de-um-telefone
 description: ""
 category: 
 tags: []

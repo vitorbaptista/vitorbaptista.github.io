@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Regulamentação das profissões de TI: a quem interessa?"
+permalink: /regulamentacao-das-profissoes-de-ti-a-quem-interessa
 description: ""
 category: 
 tags: []
