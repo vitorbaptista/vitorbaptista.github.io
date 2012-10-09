@@ -19,6 +19,8 @@ author :
   linkedin : vitorbaptista
   vizify : vitor-baptista
   googleplus : 107500187839283445175
+  openid_provider : https://www.google.com/accounts/o8/ud?source=profiles
+  openid_local_id : http://www.google.com/profiles/vitormbaptista
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
