@@ -922,11 +922,6 @@ body:not(.post-template) .post-title {
     color: #111;
 }
 
-/* Create some space to the right for the share links */
-.post-footer .author {
-    margin-right: 180px;
-}
-
 .post-footer h4 a {
     color: #2e2e2e;
     text-decoration: none;

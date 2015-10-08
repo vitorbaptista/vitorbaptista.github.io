@@ -63,30 +63,13 @@ post_class: post-template
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
-                <figure class="author-image">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.png)">
-                    <span class="hidden">{{site.author}}'s Picture</span></a>
-                </figure>
-                <section class="author">
-                    <!-- Author Name -->
-                    <h4> {{ site.author }} </h4>
-                    <!-- Author Bio -->
-                    <p> 
-                        Software engineer with a passion for civic hacking,
-                        free software, data visualization, and all the ways of
-                        improving our world through technology.
-                    </p>
-                </section>                
+                {% include author.html %}
             {% endif %}
-
-            <!-- Share links section -->
-            {% include share.html %}
             
             <!-- Disqus comments -->
             {% if page.disqus %}
                 {% include disqus.html %}
             {% endif %}
-            
         </footer>
 
     </article>

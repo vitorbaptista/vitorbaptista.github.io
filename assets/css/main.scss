@@ -12,3 +12,20 @@
 @import
 	"syntax"
 ;
+
+.post-footer .author-profiles {
+    float: right;
+}
+
+.post-footer .author-profiles a {
+    font-size: 1.8rem;
+    display: inline-block;
+    margin: 1rem 1.6rem 1.6rem 0;
+    color: #BBC7CC;
+    text-decoration: none;
+}
+
+.post-footer .author-profiles a:hover {
+    color: #50585D;
+}
+

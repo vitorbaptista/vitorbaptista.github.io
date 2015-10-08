@@ -13,6 +13,14 @@ baseurl: /
 domain_name: 'http://vitorbaptista.com'
 google_analytics: 'UA-2054412-1'
 
+# Social networks
+github: vitorbaptista
+twitter: vitorbaptista
+email: vitor@vitorbaptista.com
+facebook: vitormbaptista
+linkedin: vitorbaptista
+
 # Details for the RSS feed generator
 url:            'http://vitorbaptista.com'
 author:         'Vitor Baptista'
+author_bio: 'Software engineer with a passion for civic hacking, free software, data visualization, and all the ways of improving our world through technology.'
