@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Há algumas semanas fiz um sistema para detectar a operadora de um telefone
 (motivo de um próximo post). Fiquei empolgado por finalmente começar a brincar

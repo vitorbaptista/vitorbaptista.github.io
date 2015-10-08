@@ -6,8 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
-
 Apesar de todos os avanços em poder de processamento que vêm ocorrendo, existem
 diversas tarefas que são extremamente complexas de serem feitas por
 computadores, mas triviais para humanos. Por exemplo, identificar objetos que

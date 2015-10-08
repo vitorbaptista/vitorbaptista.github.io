@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Por acaso, estava lendo o blog do [@mauriciojr](http://twitter.com/mauriciojr) e
 descobri que ele me convidou pra essa brincadeira.

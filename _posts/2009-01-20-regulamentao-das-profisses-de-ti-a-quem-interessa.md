@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 O [Roberto Carlos Mayer](http://rocmayer.blogspot.com/), presidente da
 [Assespro São Paulo](http://www.assespro-sp.org.br/), acabou de escrever um

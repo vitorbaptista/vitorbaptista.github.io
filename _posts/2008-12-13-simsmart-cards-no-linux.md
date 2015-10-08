@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Há algumas semanas, no [IV Natal Java
 Day](http://www.jeebrasil.com.br/nataljavaday/), assisti a excelente palestra

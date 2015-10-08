@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Há algumas semanas que sempre que instalo/removo/atualizo algum pacote usando o aptitude dá o erro:
 

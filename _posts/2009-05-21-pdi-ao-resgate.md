@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Hoje tive um problema com uma imagem. Estou organizando junto com alguns amigos
 o [III ENSOL](http://www.ensol.org.br), e a [UEPB](http://www.uepb.edu.br) nos

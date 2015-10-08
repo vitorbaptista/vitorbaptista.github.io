@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Sempre achei muito interessante a idéia de emular jogos antigos, de video-games
 da minha infância, acho que todo mundo que joga e programa também acha, e, com

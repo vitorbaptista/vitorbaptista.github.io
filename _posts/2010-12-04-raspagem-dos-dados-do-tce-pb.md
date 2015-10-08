@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Esta é minha proposta conjunta com o [Fernando Brito](http://fernandobrito.com/)
 para as [Microbolsas Hacker](http://blog.esfera.mobi/microbolsas-hacker-nov11/)

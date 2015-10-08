@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Hoje, conversando com o [Fernando Brito](http://fernandobrito.com), ele me
 mostrou um site muito interessante: o da [Câmara dos

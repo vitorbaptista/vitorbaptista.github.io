@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Sempre li que os SSDs são infinitamente mais velozes que os atuais HDs. Usar um
 computador com um drive desses dá um belo ganho de performance. Por

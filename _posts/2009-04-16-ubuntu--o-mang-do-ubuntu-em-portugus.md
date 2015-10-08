@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 **Atualização**: _Demorou mas saiu a tradução do segundo exemplar pra
 Português. Tá em

@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Neste último sábado, dia 25, houve o FLISOL em João Pessoa lá no IESP, onde
 ministrei duas turmas de um minicurso, Brincando com Ruby, cuja descrição é:

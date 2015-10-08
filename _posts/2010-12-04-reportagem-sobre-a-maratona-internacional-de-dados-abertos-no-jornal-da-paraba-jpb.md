@@ -6,6 +6,5 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 <video src="/assets/media/entrevista-jpb2-04-12-10.ogv" controls="controls" />

@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Estamos a 2 dias do [III ENSOL](http://www.ensol.org.br). Na palestra do
 Richard Stallman haverá tradução e transmissão simultânea. Com a tradução eu

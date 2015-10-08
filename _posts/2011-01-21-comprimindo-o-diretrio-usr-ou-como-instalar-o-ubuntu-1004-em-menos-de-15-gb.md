@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 No natal passado dei para minha namorada,
 [Samara](http://twitter.com/sam_guimaraes), um netbook: o [Asus EeePC 2G

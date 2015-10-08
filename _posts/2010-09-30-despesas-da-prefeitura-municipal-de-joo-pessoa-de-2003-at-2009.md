@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 ![PMJP 2003~2009](/assets/media/pmjp2003-2009.png)
 

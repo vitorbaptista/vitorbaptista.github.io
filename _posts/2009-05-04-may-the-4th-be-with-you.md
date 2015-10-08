@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Devido ao trocadalho do carilho da frase do título, nerds de todo o mundo comemoram hoje o Star Wars Day. Então eu, fazendo meu dever de cidadão, divulguei a informação nas listas que participo. Então, um nerd amigo me mostrou algo totalmente demais: todos os Star Wars em ASCII Art!
 

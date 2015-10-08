@@ -5,8 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
-
 Dia desses encontrei por acaso algo que procurava há tempos: um site que me
 servisse de página inicial, onde pudesse agregar todos os sites que sempre olho.
 E encontrei algo ainda melhor!

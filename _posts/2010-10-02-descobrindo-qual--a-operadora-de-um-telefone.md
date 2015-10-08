@@ -6,7 +6,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 **24/09/2011** – _Há alguns meses a ABR Telecom trocou o captcha por outro bem
 mais forte. Logo, o site não funciona mais. Se alguém precisar dessa
