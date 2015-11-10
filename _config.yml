@@ -1,6 +1,6 @@
 name: Vitor Baptista
 description:
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+meta_description:
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "vendor", ".bundle"]
 
