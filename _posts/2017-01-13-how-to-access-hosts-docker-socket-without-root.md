@@ -82,4 +82,4 @@ code.
 [docker-inside-docker]: https://blog.docker.com/2013/09/docker-can-now-run-within-docker/
 [create-docker-group]: https://docs.docker.com/engine/installation/linux/ubuntulinux/#/manage-docker-as-a-non-root-user
 [dweomer-script-source]: https://github.com/jenkinsci/docker/issues/196#issuecomment-179486312
-[docker-sock-security]: https://raesene.github.io/blog/2016/03/06/The-Dangers-Of-Docker.sock/
+[docker-sock-security]: https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container.html
