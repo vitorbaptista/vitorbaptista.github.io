@@ -12,7 +12,7 @@ highlighter: pygments
 logo: false
 paginate: 15
 baseurl: /
-domain_name: 'https://vitorbaptista.com'
+domain_name: 'http://vitorbaptista.com'
 google_analytics: 'UA-2054412-1'
 
 # Social networks
