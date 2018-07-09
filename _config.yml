@@ -4,11 +4,11 @@ meta_description:
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "vendor", ".bundle"]
 
+plugins: ["jekyll-paginate"]
+
 permalink: /:title
-markdown: redcarpet
-redcarpet:
-    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 logo: false
 paginate: 15
 baseurl: /

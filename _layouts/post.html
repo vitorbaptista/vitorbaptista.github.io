@@ -23,14 +23,11 @@ post_class: post-template
                 {% if page.categories.size > 0 %} 
                     {{ page.categories | array_to_sentence_string | prepend: 'on ' }} 
                 {% endif %}
-                {% assign num_words = page.content | strip_html | number_of_words %}
-                {% assign minutes_f = num_words | divided_by: 200.0 %}
-                {% assign minutes_i = num_words | divided_by: 200 %}
-                {% assign diff = minutes_f | minus: minutes_i %}
-                {% if diff >= 0.5 %}
-                    {% assign minutes = minutes_i + 1 %}
+                {% assign words = content | strip_html | number_of_words %}
+                {% if words < 360 %}
+                    {% assign minutes = 1 %}
                 {% else %}
-                    {% assign minutes = minutes_i %}
+                    {% assign minutes = words | divided_by:180 %}
                 {% endif %}
                 • {{ minutes }} min read
             </section>
