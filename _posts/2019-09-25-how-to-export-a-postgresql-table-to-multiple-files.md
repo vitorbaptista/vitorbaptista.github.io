@@ -5,8 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
-
 You can use the `\COPY` command in Postgres to export the result of a SELECT to
 a file (CSV, TSV, etc.). However, what if the table is huge? I faced this
 problem where the resulting CSV had more than 50 GB. Thankfully, the `\COPY`
