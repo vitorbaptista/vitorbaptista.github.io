@@ -6,10 +6,6 @@ category:
 tags: []
 ---
 
-# Setting up Ubuntu 20.04 with Regolith
-
-![Ubuntu 20.04 with Regolith][screenshot:png]
-
 I've been using Ubuntu since its virst version, Ubuntu 4.10. I tried other distributions (Fedora, Debian, Gentoo, etc.), but always ended up back in Ubuntu. It's stable enough, easy to install, and things just work, so I don't see a reason to change. All my servers are either Ubuntu or Debian as well, so the knowledge translates well.
 
 Anyway, I was still running Ubuntu 16.04, and over the years it accumulated some quirks. Like that it never did shut down completely, I had to run `halt` and, after giving it some time to stop what it was able to, I would hodl the power button for a few seconds to finally turn it off. Or that it threw an error and asked me if I wanted to send a report to Canonical every time I loaded GNOME.
@@ -131,6 +127,8 @@ focus_follows_mouse no
 Change the "no"s to "yes" and restart.
 
 ## Conclusion
+
+![Ubuntu 20.04 with Regolith][screenshot:png]
 
 That's it! Now I have a fresh Ubuntu install with a well-configured i3wm. Everything is working, it's fast, and it's beautiful. I can now install the rest of the softwares I need to work like Python, VS Code, Docker, etc. This install should serve me well for the next few years.
 
