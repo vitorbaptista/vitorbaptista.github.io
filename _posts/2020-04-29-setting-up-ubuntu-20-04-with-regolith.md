@@ -109,9 +109,9 @@ ii  i3xrocks-wifi                              3.0.10                           
 
 ## 3. Final touches
 
-Finally, I just need to configure the focus to follow the mouse, so I can interact with a window just by hovering my mouse over it, and add a couple programs in autostart. The way I used to do this was by copying the default Regolith's i3 file and tweaking the parameters I wanted. This works, but then I have to maintain the i3 config file myself, even if a new Regolith version updates it.
+Finally, I just need to configure the focus to follow the mouse, so I can interact with a window just by hovering my mouse over it, and add a couple programs in autostart.
 
-To avoid this issue, Regolith allow us to tweak the default configuration file by changing variables. We just need to create the file ~/.Xresources-regolith with:
+The way I used to do this was by copying the default Regolith's i3 file and tweaking the parameters I wanted. This works, but then I have to maintain the i3 config file myself, even if a new Regolith version updates it. To avoid this burden, Regolith allow tweaking the default configurations by changing variables. We can define them in the file `~/.Xresources-regolith` as:
 
 ```
 i3-wm.gaps.focus_follows_mouse: yes
