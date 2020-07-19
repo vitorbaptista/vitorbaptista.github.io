@@ -109,22 +109,22 @@ ii  i3xrocks-wifi                              3.0.10                           
 
 ## 3. Final touches
 
-Finally, I just need to configure the focus to follow the mouse. This means that to start interacting with some screen, I just need to hover my mouse over it. To do it, we need to copy Regolith's default i3wm configuration file so we can tweak it. Just do:
+Finally, I just need to configure the focus to follow the mouse, so I can interact with a window just by hovering my mouse over it, and add a couple programs in autostart. The way I used to do this was by copying the default Regolith's i3 file and tweaking the parameters I wanted. This works, but then I have to maintain the i3 config file myself, even if a new Regolith version updates it.
+
+To avoid this issue, Regolith allow us to tweak the default configuration file by changing variables. We just need to create the file ~/.Xresources-regolith with:
 
 ```
-mkdir ~/.config/regolith/i3
-cp /etc/regolith/i3/config ~/.config/regolith/i3/
+i3-wm.gaps.focus_follows_mouse: yes
+i3-wm.program.1: rescuetime
+i3-wm.program.2: setxkbmap -option ctrl:nocaps
 ```
 
-Then open `~/.config/regolith/i3/config` and search for the string "focus_follows_mouse". You should see something similar to:
+After reloading Regolith by running `regolith-look refresh`, the changes will
+be applied. You can check all variables available by looking in the
+`/etc/regolith/i3/config` file. The variables look like
+`$i3-wm.gaps.focus_follows_mouse`.
 
-```ini
-# window focus follows your mouse movements as the mouse crosses window borders
-set_from_resource $i3-wm.gaps.focus_follows_mouse i3-wm.gaps.focus_follows_mouse no
-focus_follows_mouse no
-```
-
-Change the "no"s to "yes" and restart.
+_Thanks for this tip, [Chris](https://github.com/MoJo2600)!_
 
 ## Conclusion
 
