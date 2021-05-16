@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-_Traduzido de https://waitbutwhy.com/2014/10/religion-for-the-nonreligious.html_
+_Traduzido de_ [Religion for the non-religious](https://waitbutwhy.com/2014/10/religion-for-the-nonreligious.html)
 
 > A mente... pode fazer um céu do inferno, ou um inferno do céu. - John Milton
 > 
