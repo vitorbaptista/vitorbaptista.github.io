@@ -8,20 +8,20 @@
     <!-- Author Bio -->
     <p> {{ site.author_bio }} </p>
     <section class="author-profiles">
-        <a class="fa fa-at" href="mailto:{{ site.email }}">
+        <a rel="me" class="fa-regular fa-at" href="mailto:{{ site.email }}">
             <span class="hidden">E-mail</span>
         </a>
-        <a class="fa fa-github-alt" href="https://github.com/{{ site.github }}">
+        <a rel="me" class="fa-brands fa-github-alt" href="https://github.com/{{ site.github }}">
             <span class="hidden">GitHub</span>
         </a>
-        <a class="fa fa-linkedin" href="https://www.linkedin.com/in/{{ site.linkedin }}">
+        <a rel="me" class="fa-brands fa-linkedin-in" href="https://www.linkedin.com/in/{{ site.linkedin }}">
             <span class="hidden">LinkedIn</span>
         </a>
-        <a class="fa fa-twitter" href="https://twitter.com/{{ site.twitter }}">
+        <a rel="me" class="fa-brands fa-twitter" href="https://twitter.com/{{ site.twitter }}">
             <span class="hidden">Twitter</span>
         </a>
-        <a class="fa fa-facebook" href="https://facebook.com/{{ site.facebook }}">
-            <span class="hidden">Facebook</span>
+        <a rel="me" class="fa-brands fa-mastodon" href="https://{{ site.mastodon.instance }}/@{{ site.mastodon.handle }}">
+            <span class="hidden">Mastodon</span>
         </a>
     </section>
 </section>                

@@ -19,8 +19,10 @@ google_analytics: 'UA-2054412-1'
 github: vitorbaptista
 twitter: vitorbaptista
 email: vitor@vitorbaptista.com
-facebook: vitormbaptista
 linkedin: vitorbaptista
+mastodon:
+  instance: sigmoid.social
+  handle: vitor
 
 # Details for the RSS feed generator
 url:            'https://vitorbaptista.com'
