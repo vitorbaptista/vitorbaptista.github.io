@@ -169,7 +169,7 @@ E depois há todas as vezes em que a visão cega de alguém os mantêm no relaci
 
 ### 3) No passo 1, você é muito, muito estúpido.
 
-Uma forma que essa estupidez aparece é quando nós cometendo várias vezes os mesmos erros óbvios.
+Uma forma que essa estupidez aparece é quando nós cometemos várias vezes os mesmos erros óbvios.
 
 O exemplo mais gritante é a forma como o nevoeiro nos convence, dia após dia após dia, de que certas coisas nos farão felizes quando, na realidade, elas absolutamente não o fazem. A neblina alinha uma fila de cenouras, nos diz que elas são a chave da felicidade, e nos diz para esquecer a felicidade de hoje em favor de dirigir toda a nossa esperança a toda a felicidade que o futuro nos reserva, porque vamos conseguir essas cenouras.
 
@@ -181,9 +181,9 @@ A neblina também é muito mais prejudicial do que o nutricionista porque não s
 
 Há um conceito em psicologia chamado A Esteira Hedônica, que sugere que os seres humanos têm um nível de felicidade padrão estagnado e quando algo bom ou ruim acontece, após uma mudança inicial na felicidade, sempre voltamos a esse nível padrão. E no passo 1, isto é completamente verdade, é claro, já que tentar ficar permanentemente mais feliz enquanto está na neblina é como tentar secar seu corpo enquanto está debaixo do chuveiro com a água correndo.
 
-Mas recuso-me a acreditar que a mesma espécie que constrói arranha-céus, escreve sinfonias, voa para a lua e entende o que um Bóson de Higgs é incapaz de sair da esteira e realmente melhorar de forma significativa.
+Mas recuso-me a acreditar que a mesma espécie que constrói arranha-céus, escreve sinfonias, voa para a lua e entende o que é um Bóson de Higgs seja incapaz de sair da esteira e realmente melhorar de forma significativa.
 
-Acho que a maneira de fazê-lo é aprender a subir esta escada de consciência para passar mais do nosso tempo nos passos 2, 3 e 4, e menos dele atolado inconscientemente no nevoeiro.
+Acho que a maneira de fazê-lo é aprender a subir a escada de consciência para passar mais do nosso tempo nos passos 2, 3 e 4, e menos dele atolado inconscientemente no nevoeiro.
 
 ## Passo 2: Afinando do nevoeiro para revelar o contexto
 
@@ -193,7 +193,7 @@ Esta é a magia do Ser Superior em nossas cabeças.
 
 Por outro lado, os animais em sua cabeça, como seus parentes do mundo real, só podem ver uma árvore, e quando vêem uma, reagem instantaneamente a ela com base em suas necessidades primitivas. Quando você está no Passo 1, seu estado inconsciente de animal não se lembra nem mesmo que o Ser Superior existe, e suas habilidades geniais vão para o lixo.
 
-O Passo 2 tem tudo a ver com o afinamento da névoa suficiente para trazer os pensamentos e habilidades do Ser Superior para sua consciência, permitindo que você veja por trás e ao redor das coisas que acontecem na vida. O passo 2 é trazer o contexto para sua consciência, o que revela uma versão da verdade muito mais profunda e com mais nuâncias.
+O Passo 2 tem tudo a ver com afinar a névoa o suficiente para trazer os pensamentos e habilidades do Ser Superior para sua consciência, permitindo que você veja por trás e ao redor das coisas que acontecem na vida. O passo 2 é trazer o contexto para sua consciência, o que revela uma versão da verdade muito mais profunda e com mais nuâncias.
 
 Há muitas atividades ou empreendimentos que podem ajudar a dissipar sua neblina. Para citar três:
 
@@ -203,20 +203,23 @@ Há muitas atividades ou empreendimentos que podem ajudar a dissipar sua neblina
 
 3) Meditação, exercícios, ioga, etc. - atividades que ajudam a acalmar a conversa inconsciente do cérebro, ou seja, permitem que a neblina se dissipe.
 
-Mas a maneira mais fácil e eficaz de diminuir a neblina é simplesmente estar atento a ela. Sabendo que a neblina existe, entendendo o que ela é e as diferentes formas que ela assume, e aprendendo a reconhecer quando você está nela, você dificulta sua capacidade de administrar sua vida. Você não pode chegar ao Passo 2 se não souber quando estiver no Passo 1.
+Mas a maneira mais fácil e eficaz de diminuir a neblina é simplesmente estar atento a ela. Ao saber que a neblina existe, entender o que ela é e as diferentes formas que assume, e aprendendo a reconhecer quando você está nela, você diminui a capacidade da neblina administrar sua vida. Você não pode chegar ao Passo 2 se não souber quando estiver no Passo 1.
 
 A maneira de passar para o Passo 2 é lembrar-se de permanecer consciente do contexto por trás e em torno do que você vê, o que você encontra e as decisões que você toma. É isso - conhecer o nevoeiro e lembrar de olhar todo o contexto mantém você consciente, consciente da realidade e, como você verá, faz de você uma versão muito melhor de si mesmo do que você está no Passo 1. Alguns exemplos...
 
 Eis como se parece um caixa de supermercado rude no passo 1 vs. passo 2:
 
 ![Caixa de supermercado rude](/assets/images/waitbutwhy/cashier-1024x512.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | "Ele foi rude COMIGO. NINGUÉM é rude COMIGO!" (pensamento) | "Esse cara está com mau humor. Talvez seu dia foi péssimo. Ou sua infância." (pensamento) |
 | | Está tudo bem. |
 
 Eis como é a gratidão:
+
 ![Gratidão](/assets/images/waitbutwhy/gratitude2.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | Coisas que eu quero (pensamento) | Coisas que eu quero (pensamento) |
@@ -224,19 +227,25 @@ Eis como é a gratidão:
 | Que estranho que o chão está coberto de neve. | |
 
 Algo bom acontecendo:
+
 ![Algo bom aconteceu](/assets/images/waitbutwhy/good-thing.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | Tudo vai continuar maravilhoso para sempre! | É parte disso |
 
 Algo ruim acontecendo:
+
 ![Algo ruim aconteceu](/assets/images/waitbutwhy/bad-thing.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | A vida será horrível daqui em diante | É parte disso |
 
 Aquele fenômeno onde tudo de repente parece horrível tarde da noite na cama:
+
 ![De noite na cama](/assets/images/waitbutwhy/late-night.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | Tudo é tão assustador! | As vezes durante à noite os cérebros humanos surtam e pensam:|
@@ -244,13 +253,17 @@ Aquele fenômeno onde tudo de repente parece horrível tarde da noite na cama:
 | Por quê eu sou tão ridículo? | Eu consigo sentir meu cérebro surtando. Ah, cérebros! |
 
 Um pneu furado:
+
 ![Pneu furado](/assets/images/waitbutwhy/flat-tire.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | Como eu sou um azarado! Sou uma vítima! | Entre 10 e 15 coisas chatas como esta acontecem por ano. Aparentemente hoje é o dia de resolver uma delas. Chato, mas acontece. |
 
 Consequências de longo prazo:
+
 ![Consequências de longo prazo](/assets/images/waitbutwhy/consequences1.jpg)
+
 | No Passo 1 | No Passo 2 |
 | --- | --- |
 | Ha! Eu fiz e ninguém percebeu! Sem consequências! | Ação (verde)|
