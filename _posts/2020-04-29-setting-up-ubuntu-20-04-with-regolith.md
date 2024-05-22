@@ -114,9 +114,10 @@ Finally, I just need to configure the focus to follow the mouse, so I can intera
 The way I used to do this was by copying the default Regolith's i3 file and tweaking the parameters I wanted. This works, but then I have to maintain the i3 config file myself, even if a new Regolith version updates it. To avoid this burden, Regolith allow tweaking the default configurations by changing variables. We can define them in the file `~/.Xresources-regolith` as:
 
 ```
-i3-wm.gaps.focus_follows_mouse: yes
-i3-wm.program.1: rescuetime
-i3-wm.program.2: setxkbmap -option ctrl:nocaps
+wm.gaps.inner.size: 0
+wm.gaps.focus_follows_mouse: yes
+wm.program.1: rescuetime
+wm.program.2: setxkbmap -option ctrl:nocaps
 ```
 
 After reloading Regolith by running `regolith-look refresh`, the changes will
