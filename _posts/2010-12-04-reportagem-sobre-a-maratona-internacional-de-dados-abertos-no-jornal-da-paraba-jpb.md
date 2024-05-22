@@ -7,4 +7,7 @@ category:
 tags: []
 ---
 
-<video src="/assets/media/entrevista-jpb2-04-12-10.ogv" controls="controls" />
+<iframe title="Reportagem sobre a Maratona Internacional de Dados Abertos em
+João Pessoa" class="youtube-player" type="text/html" width="425" height="344"
+src="http://www.youtube.com/embed/4unxkjfNoKE" frameborder="0"
+allowfullscreen="true"> </iframe>

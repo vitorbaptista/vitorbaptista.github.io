@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-To drop [user-defined functions (UDF)](udfs) in Snowflake, we need the function name
+To drop [user-defined functions (UDF)][udfs] in Snowflake, we need the function name
 and list of parameters. Depending on how many UDFs you have, this can become boring quickly.  
 
 Instead of going one by one, run the SQL command below:
