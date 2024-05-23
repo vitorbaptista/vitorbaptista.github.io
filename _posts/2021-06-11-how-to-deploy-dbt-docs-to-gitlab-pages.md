@@ -99,7 +99,7 @@ pipeline run.
 
 This setup will generate and deploy the dbt documentation after every change. Now that GitLab CI is configured to run dbt, it is straightforward to set it up to deploy your models (just pay attention that you don't use all your pipeline minutes).
 
-I hope you enjoyed the tutorial. If something doesn't work, feel free to contact me [@vitorbaptista](vitorbaptista-twitter).
+I hope you enjoyed the tutorial. If something doesn't work, feel free to contact me [@vitorbaptista][vitorbaptista-twitter].
 
 ## Extra tips
 

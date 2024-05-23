@@ -16,10 +16,8 @@ Quem somos nós?
 Eu, o Vítor, sou quase (espero) bacharel em Computação. Estou no último período
 do curso na UFPB, faltando só defender a monografia. Acompanho a lista do
 thacker desde a cópia do Blog do Planalto, mas nunca participei ativamente.
-[Fiz](http://vitorbaptista.com/descobrindo-qual-e-a-operadora-de-um-telefone/)
-[alguns](http://vitorbaptista.com/bingo-do-ze-parte-1/)
-[pequenos](http://vitorbaptista.com/despesas-da-prefeitura-municipal-de-joao-pessoa-de-2003-ate-2009/)
-[hacks](http://vitorbaptista.com/gastos-dos-deputados-paraibanos-com-telefonia-combustiveis-e-lubrificantes/) e nada mais.
+[Fiz][operadora-celular] [alguns][bingoze] [pequenos][gastos-pmjp]
+[hacks][gastos-combustivel] e nada mais.
 
 O Fernando é graduando em Estatística, mas amanhã vai prestar vestibular para
 Computação. Entrou na lista do thacker também há algum tempo e está
@@ -67,6 +65,12 @@ comunidades que lidem com o movimento de dados abertos.
 
 Nós organizamos uma instância do Open Data Day aqui na Paraíba justamente com
 este objetivo: agregar pessoas, até conseguimos espaço para [uma
-entrevista](http://vitorbaptista.com/reportagem-sobre-a-maratona-internacional-de-dados-abertos-no-jpb2/)
-na associada local da Globo. Todavia sabemos que ainda há muito mais a ser feito
-e que essa pode ser justamente a oportunidade que estava nos faltando.
+entrevista][opendataday] na associada local da Globo. Todavia sabemos que ainda
+há muito mais a ser feito e que essa pode ser justamente a oportunidade que
+estava nos faltando.
+
+[operadora-celular]: /descobrindo-qual-e-a-operadora-de-um-telefone
+[bingoze]: /bingo-do-ze
+[gastos-pmjp]: /despesas-da-prefeitura-municipal-de-joo-pessoa-de-2003-at-2009
+[gastos-combustivel]: /gastos-dos-deputados-paraibanos-com-telefonia-combustiveis-e-lubrificantes
+[opendataday]: /reportagem-sobre-a-maratona-internacional-de-dados-abertos-no-jpb2

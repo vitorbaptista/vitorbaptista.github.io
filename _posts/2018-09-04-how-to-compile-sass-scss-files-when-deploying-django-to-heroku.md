@@ -46,7 +46,7 @@ build steps (e.g. minifying, compressing images, etc.), just add them to the
 `bin/post_compile` file.
 
 You can see how I've done in my Django project on
-[https://github.com/vitorbaptista/lainonima](lainonima).
+[https://github.com/vitorbaptista/lainonima][lainonima].
 
 [django-sass-processor]: https://github.com/jrief/django-sass-processor
 [python-buildpack]: https://github.com/heroku/heroku-buildpack-python/tree/master/bin/steps/hooks
