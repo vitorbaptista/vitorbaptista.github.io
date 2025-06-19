@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codenames Travel Edition Generator</title>
+    <title>Gerador de Cartas Codenames Edição Viagem</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -434,36 +434,32 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">CODENAMES TRAVEL EDITION</h1>
-        <p class="subtitle">Card Generator & Printer</p>
+        <h1 class="title">CODENAMES EDIÇÃO VIAGEM</h1>
+        <p class="subtitle">Gerador de Cartas para Impressão</p>
 
         <div class="input-section">
             <div class="instructions">
-                <h3>🎯 How to Create Your Cards</h3>
+                <h3>🎯 Como Criar Suas Cartas</h3>
                 <ul>
-                    <li><strong>Word Cards:</strong> Enter any number of words (minimum 4) - one per line</li>
-                    <li><strong>Grid Size:</strong> Creates the largest square grid possible (4x4, 5x5, 6x6, etc.)</li>
-                    <li><strong>Print:</strong> Use A4 paper, cut along dotted lines with 1-2mm bleed margin</li>
-                    <li><strong>Play:</strong> Choose "top half" or "bottom half" before each game</li>
-                    <li><strong>Agent Cards:</strong> 25 total - 8 red 🔥, 8 blue 💧, 1 double agent ⚡, 1 spy 💀, 7 civilians 👤</li>
-                    <li><strong>Keycards:</strong> 40 spymaster cards (5×5 grids) - 20 red start, 20 blue start</li>
+                    <li><strong>Cartas de Palavras:</strong> Digite qualquer número de palavras (mínimo 4) - uma por linha</li>
+                    <li><strong>Imprimir:</strong> Use papel A4. As cartas têm 45x68mm (padrão mini euro).</li>
+                    <li><strong>Cartas de Agente:</strong> 25 no total - 8 vermelhos 🔥, 8 azuis 💧, 1 agente duplo ⚡, 1 espião 💀, 7 civis 👤</li>
+                    <li><strong>Cartas-chave:</strong> 40 cartas de mestre-espião aleatórias - 20 início vermelho, 20 início azul</li>
                 </ul>
             </div>
 
             <div class="input-group">
-                <label class="input-label" for="wordList">Word List (one per line):</label>
+                <label class="input-label" for="wordList">Palavras (uma por linha):</label>
                 <textarea id="wordList" class="word-input" placeholder="ACHAR&#10;ÁFRICA&#10;ÁGUA&#10;AMARELO&#10;AMAZONAS&#10;AMÉRICA&#10;AMOR&#10;ARARA&#10;ASSISTIR&#10;ATO&#10;AZUL&#10;BACIA&#10;BAIXO&#10;BALA&#10;BANCO&#10;BANDEIRANTES&#10;BARATA&#10;BARRA&#10;BATERIA&#10;BATIDA&#10;BEBER&#10;BEIJINHO&#10;BEIRUTE&#10;BEXIGA&#10;BICHO"></textarea>
-                <div class="help-text">Enter any number of words (minimum 4 for a 2x2 grid). Works best with even numbers for balanced cards.</div>
+                <div class="help-text">Digite qualquer número de palavras (mínimo 4 para uma grade 2x2).</div>
             </div>
 
-            <button class="generate-btn" onclick="generateCards()">🎮 Generate Printable Cards</button>
+            <button class="generate-btn" onclick="generateCards()">🎮 Gerar Cartas</button>
         </div>
 
         <div class="print-section">
             <div class="print-controls" id="printControls" style="display: none;">
-                <button class="print-btn" onclick="window.print()">🖨️ Print All Pages</button>
-                <button class="print-btn" onclick="downloadPDF()">📄 Download PDF</button>
-                <button class="print-btn" onclick="resetGenerator()">🔄 Reset</button>
+                <button class="print-btn" onclick="downloadPDF()">📄 Baixar PDF</button>
             </div>
 
             <div class="preview-area" id="previewArea">
@@ -473,7 +469,7 @@
             </div>
 
             <div class="status-message" id="statusMessage">
-                Enter your word list above and click "Generate Printable Cards" to create your custom deck!
+                Digite sua lista de palavras acima e clique em "Gerar Cartas" para criar seu baralho personalizado!
             </div>
         </div>
     </div>
@@ -486,7 +482,7 @@
             const words = wordList.split('\n').map(w => w.trim()).filter(w => w.length > 0);
 
             if (words.length < 4) {
-                alert(`Please enter at least 4 words. You have ${words.length} words.`);
+                alert(`Por favor, digite pelo menos 4 palavras. Você tem ${words.length} palavras.`);
                 return;
             }
 
@@ -506,9 +502,9 @@
             printControls.style.display = 'flex';
 
             // Update status message
-            statusMessage.innerHTML = `Generated ${gridSize}×${gridSize} grid with ${words.length} words<br>
-                               + 25 agent cards (8 red, 8 blue, 1 double agent, 1 spy, 7 civilians)<br>
-                               + 40 keycards (20 red start, 20 blue start)`;
+            statusMessage.innerHTML = `Gerado grade ${gridSize}×${gridSize} com ${words.length} palavras<br>
+                               + 25 cartas de agente (8 vermelhos, 8 azuis, 1 agente duplo, 1 espião, 7 civis)<br>
+                               + 40 cartas-chave (20 início vermelho, 20 início azul)`;
 
             // Create word cards
             createWordCardPages(words, wordCardsArea);
@@ -678,13 +674,13 @@
             const agentAndKeyCardsArea = document.getElementById('agentAndKeyCardsArea');
 
             if (!previewArea.classList.contains('show')) {
-                alert('Please generate cards first before downloading PDF.');
+                alert('Por favor, gere as cartas primeiro antes de baixar o PDF.');
                 return;
             }
 
             // Show loading message
             const originalText = document.querySelector('[onclick="downloadPDF()"]').textContent;
-            document.querySelector('[onclick="downloadPDF()"]').textContent = '⏳ Generating PDF...';
+            document.querySelector('[onclick="downloadPDF()"]').textContent = '⏳ Gerando PDF...';
             document.querySelector('[onclick="downloadPDF()"]').disabled = true;
 
             try {
@@ -735,7 +731,7 @@
                     })
                     .catch((error) => {
                         console.error('Error generating PDF:', error);
-                        alert('Error generating PDF. Please try using the Print button instead.');
+                        alert('Erro ao gerar PDF. Por favor, tente usar o botão Imprimir.');
                     })
                     .finally(() => {
                         // Reset button
@@ -745,7 +741,7 @@
 
             } catch (error) {
                 console.error('Error in downloadPDF function:', error);
-                alert('PDF library not loaded. Please try using the Print button and save as PDF.');
+                alert('Biblioteca PDF não carregada. Por favor, tente usar o botão Imprimir e salvar como PDF.');
 
                 // Reset button
                 document.querySelector('[onclick="downloadPDF()"]').textContent = originalText;
@@ -767,14 +763,6 @@
 						}
 
             return pdf;
-        }
-
-        function resetGenerator() {
-            document.getElementById('wordList').value = '';
-            document.getElementById('previewArea').classList.remove('show');
-            document.getElementById('printControls').style.display = 'none';
-            document.getElementById('previewArea').innerHTML = '';
-            document.getElementById('statusMessage').innerHTML = 'Enter your word list above and click "Generate Printable Cards" to create your custom deck!';
         }
 
         // Load default words on page load
