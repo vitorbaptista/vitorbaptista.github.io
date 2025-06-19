@@ -476,7 +476,7 @@
 
         <div class="print-section">
             <div class="print-controls" id="printControls" style="display: none;">
-                <button class="print-btn" onclick="downloadPDF()">📄 Baixar PDF</button>
+                <button class="print-btn" onclick="window.print()">📄 Imprimir</button>
             </div>
 
             <div class="preview-area" id="previewArea">
@@ -491,8 +491,6 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script></script>
     <script>
         function generateCards() {
             const wordList = document.getElementById('wordList').value.trim();
@@ -685,115 +683,8 @@
             }
         }
 
-        function downloadPDF() {
-            const previewArea = document.getElementById('previewArea');
-            const wordCardsArea = document.getElementById('wordCardsArea');
-            const agentAndKeyCardsArea = document.getElementById('agentAndKeyCardsArea');
-
-            if (!previewArea.classList.contains('show')) {
-                alert('Por favor, gere as cartas primeiro antes de baixar o PDF.');
-                return;
-            }
-
-            // Show loading message
-            const originalText = document.querySelector('[onclick="downloadPDF()"]').textContent;
-            document.querySelector('[onclick="downloadPDF()"]').textContent = '⏳ Gerando PDF...';
-            document.querySelector('[onclick="downloadPDF()"]').disabled = true;
-
-            try {
-                // Configure PDF options with explicit page-break control
-                const options = {
-                    margin: 0,
-                    filename: 'codenames-travel-cards-word-cards.pdf',
-                    image: {
-                        type: 'png',
-                        quality: 0.92
-                    },
-                    html2canvas: {
-                        scale: 1.5,
-                        useCORS: true,
-                        allowTaint: true,
-                        logging: false,
-                        scrollX: 0,
-                        scrollY: 0
-                    },
-                    jsPDF: {
-                        unit: 'mm',
-                        format: 'a4',
-                        orientation: 'portrait'
-                    },
-                    pagebreak: {
-                        mode: ['css'],
-                        before: '.page-preview',
-                        avoid: '.print-card'
-                    }
-                };
-
-                // Generate PDF and filter out empty odd pages
-                html2pdf()
-                    .set(options)
-                    .from(wordCardsArea)
-                    .toPdf()
-                    .get('pdf')
-                    .then(_removePdfEmptyPages)
-                    .save()
-                    .then(() => {
-                      return html2pdf()
-                                 .set({...options, filename: 'codenames-travel-cards-special-cards.pdf'})
-                                 .from(agentAndKeyCardsArea)
-                                 .toPdf()
-                                 .get('pdf')
-                                 .then(_removePdfEmptyPages)
-                                 .save();
-                    })
-                    .catch((error) => {
-                        console.error('Error generating PDF:', error);
-                        alert('Erro ao gerar PDF. Por favor, tente usar o botão Imprimir.');
-                    })
-                    .finally(() => {
-                        // Reset button
-                        document.querySelector('[onclick="downloadPDF()"]').textContent = originalText;
-                        document.querySelector('[onclick="downloadPDF()"]').disabled = false;
-                    });
-
-            } catch (error) {
-                console.error('Error in downloadPDF function:', error);
-                alert('Biblioteca PDF não carregada. Por favor, tente usar o botão Imprimir e salvar como PDF.');
-
-                // Reset button
-                document.querySelector('[onclick="downloadPDF()"]').textContent = originalText;
-                document.querySelector('[onclick="downloadPDF()"]').disabled = false;
-            }
-        }
-
-        function _removePdfEmptyPages(pdf) {
-            // The last page is always empty
-            pdf.deletePage(pdf.internal.getNumberOfPages());
-
-            // Get total number of pages
-            const totalPages = pdf.internal.getNumberOfPages();
-            console.log(`Generated PDF with ${totalPages} pages`);
-
-						for (let i = totalPages - (1 - totalPages % 2); i >= 1; i -= 2) {
-							pdf.deletePage(i);
-							console.log(`Deleted page ${i} (current number of pages ${pdf.internal.getNumberOfPages()}`);
-						}
-
-            return pdf;
-        }
-
         // Load default words on page load
         window.addEventListener('load', function() {
-            // Check if html2pdf is loaded
-            if (typeof html2pdf === 'undefined') {
-                console.error('html2pdf library not loaded');
-                // Hide PDF button if library is not available
-                const pdfBtn = document.querySelector('[onclick="downloadPDF()"]');
-                if (pdfBtn) {
-                    pdfBtn.style.display = 'none';
-                }
-            }
-
             const defaultWords = `ACHAR
 ÁFRICA
 ÁGUA
@@ -1034,9 +925,7 @@ VIAGEM
 VITÓRIA
 VOLTA
 XADREZ`;
-            const defaultWordsList = defaultWords.split("\n");
-            const maxNumWords = 240;
-            document.getElementById('wordList').value = defaultWordsList.slice(0, maxNumWords).join("\n");
+            document.getElementById('wordList').value = defaultWords;
         });
     </script>
 </body>
