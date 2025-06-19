@@ -210,7 +210,18 @@
 
         /* Print styles - A4 optimized */
         @media print {
-            body {
+            @page {
+                margin: 0;
+                size: A4 portrait;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            html, body {
                 background: white !important;
                 margin: 0 !important;
                 padding: 0 !important;
@@ -236,7 +247,11 @@
             .preview-area {
                 border: none !important;
                 background: white !important;
+                position: absolute !important;
                 padding: 0 !important;
+                margin: 0 !important;
+                top: 0 !important;
+                left: 0 !important;
             }
 
             .page-preview {
@@ -259,12 +274,7 @@
 
             .print-card {
                 break-inside: avoid;
-            }
-
-            .card-grid {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                print-color-adjust: exact !important;
+                page-break-inside: avoid;
             }
         }
 
