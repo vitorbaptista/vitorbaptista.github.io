@@ -12,7 +12,7 @@
             padding: 10px;
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -21,17 +21,17 @@
             padding: 15px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
-        
+
         @media (min-width: 768px) {
             body {
                 padding: 20px;
             }
-            
+
             .container {
                 padding: 30px;
             }
         }
-        
+
         .title {
             text-align: center;
             color: #2c3e50;
@@ -40,44 +40,44 @@
             font-weight: bold;
             line-height: 1.2;
         }
-        
+
         .subtitle {
             text-align: center;
             color: #7f8c8d;
             font-size: 1em;
             margin-bottom: 20px;
         }
-        
+
         @media (min-width: 768px) {
             .title {
                 font-size: 2.5em;
                 margin-bottom: 10px;
             }
-            
+
             .subtitle {
                 font-size: 1.2em;
                 margin-bottom: 30px;
             }
         }
-        
+
         .input-section {
             background: #ecf0f1;
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        
+
         @media (min-width: 768px) {
             .input-section {
                 padding: 25px;
                 margin-bottom: 30px;
             }
         }
-        
+
         .input-group {
             margin-bottom: 20px;
         }
-        
+
         .input-label {
             display: block;
             color: #2c3e50;
@@ -85,7 +85,7 @@
             margin-bottom: 8px;
             font-size: 14px;
         }
-        
+
         .word-input {
             width: 100%;
             height: 120px;
@@ -97,18 +97,18 @@
             resize: vertical;
             box-sizing: border-box;
         }
-        
+
         .word-input:focus {
             border-color: #3498db;
             outline: none;
         }
-        
+
         .help-text {
             font-size: 12px;
             color: #7f8c8d;
             margin-top: 5px;
         }
-        
+
         .generate-btn {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
@@ -121,16 +121,16 @@
             transition: all 0.3s ease;
             width: 100%;
         }
-        
+
         .generate-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(231, 76, 60, 0.3);
         }
-        
+
         .print-section {
             margin-top: 30px;
         }
-        
+
         .print-controls {
             display: flex;
             gap: 10px;
@@ -138,14 +138,14 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         @media (min-width: 768px) {
             .print-controls {
                 gap: 15px;
                 margin-bottom: 20px;
             }
         }
-        
+
         .print-btn {
             background: #27ae60;
             color: white;
@@ -160,19 +160,19 @@
             min-width: 120px;
             max-width: 200px;
         }
-        
+
         @media (min-width: 768px) {
             .print-btn {
                 padding: 12px 24px;
                 flex: none;
             }
         }
-        
+
         .print-btn:hover {
             background: #229954;
             transform: translateY(-1px);
         }
-        
+
         .preview-area {
             border: 2px dashed #bdc3c7;
             border-radius: 8px;
@@ -181,20 +181,33 @@
             min-height: 200px;
             display: none;
         }
-        
+
         .preview-area.show {
             display: block;
         }
-        
+
         .page-preview {
             background: white;
-            width: 100%;
-            max-width: 794px; /* A4 width in pixels at 96 DPI */
+            width: 210mm;
+            height: 297mm;
             margin: 0 auto 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             position: relative;
+            box-sizing: border-box;
+            display: grid;
+            place-items: center;
         }
-        
+
+        /* Scale down on smaller screens while maintaining proportions */
+        @media (max-width: 220mm) {
+            .page-preview {
+                width: 100%;
+                max-width: 210mm;
+                height: auto;
+                aspect-ratio: 210 / 297;
+            }
+        }
+
         /* Print styles - A4 optimized */
         @media print {
             body {
@@ -202,7 +215,7 @@
                 margin: 0 !important;
                 padding: 0 !important;
             }
-            
+
             .container {
                 background: white !important;
                 box-shadow: none !important;
@@ -211,20 +224,20 @@
                 margin: 0 !important;
                 max-width: none !important;
             }
-            
+
             .input-section,
             .print-controls,
             .title,
             .subtitle {
                 display: none !important;
             }
-            
+
             .preview-area {
                 border: none !important;
                 background: white !important;
                 padding: 0 !important;
             }
-            
+
             .page-preview {
                 box-shadow: none !important;
                 border: none !important;
@@ -233,33 +246,38 @@
                 width: 210mm !important;
                 height: 297mm !important;
                 margin: 0 !important;
+                padding: 0 !important;
+                position: relative !important;
+                max-width: none !important;
+                aspect-ratio: auto !important;
             }
-            
+
             .page-preview:last-child {
                 break-after: auto;
             }
-            
+
             .print-card {
                 break-inside: avoid;
             }
         }
-        
+
         /* Card grid for A4 */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            gap: 2mm;
-            padding: 7mm;
-            width: 210mm;
-            height: 297mm;
+            grid-template-columns: repeat(4, 45mm);
+            grid-template-rows: repeat(4, 68mm);
+            /* Fixed size for perfect centering */
+            width: 198mm; /* 4 × 45mm  + (210mm - 4 × 45mm) / 5 * 3 = 198mm -- divided by 5 because it's 3 gaps between the cards + 2 margins (left and right) */
+            height: 287mm; /* 4 × 68mm + (297mm - 4 × 68mm) / 5 * 3 = 287mm */
+            column-gap: 6mm;
+            row-gap: 5mm;
             box-sizing: border-box;
+            position: relative;
         }
-        
+
         .print-card {
             width: 45mm;
             height: 68mm;
-            border: 1px solid #ddd;
             border-radius: 3mm;
             position: relative;
             background: white;
@@ -303,17 +321,17 @@
             box-sizing: border-box;
             text-transform: uppercase;
         }
-        
+
         .card-half.top {
             background: #2c3e50;
             color: white;
         }
-        
+
         .card-half.bottom {
             background: #ecf0f1;
             color: #2c3e50;
         }
-        
+
         .agent-card {
             display: flex;
             align-items: center;
@@ -322,28 +340,28 @@
             font-weight: bold;
             color: white;
         }
-        
+
         .agent-card.red {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
         }
-        
+
         .agent-card.blue {
             background: linear-gradient(135deg, #3498db, #2980b9);
         }
-        
+
         .agent-card.spy {
             background: linear-gradient(45deg, #e74c3c 0%, #e74c3c 50%, #3498db 50%, #3498db 100%);
             position: relative;
         }
-        
+
         .agent-card.civilian {
             background: #bdc3c7;
         }
-        
+
         .agent-card.assassin {
             background: linear-gradient(135deg, #2c3e50, #1a252f);
         }
-        
+
         /* Keycard styles - simplified for PDF */
         .keycard {
             width: 45mm;
@@ -360,15 +378,15 @@
             padding: 2mm;
             box-sizing: border-box;
         }
-        
+
         .keycard.red-start {
             border-color: #e74c3c;
         }
-        
+
         .keycard.blue-start {
             border-color: #3498db;
         }
-        
+
         .keycard::before {
             content: '';
             position: absolute;
@@ -379,7 +397,7 @@
             border: 1px dashed #999;
             pointer-events: none;
         }
-        
+
         .keycard::after {
             content: '';
             position: absolute;
@@ -390,27 +408,27 @@
             border: 0.5px dotted #666;
             pointer-events: none;
         }
-        
+
         .key-cell {
             border: 0.5px solid rgba(0,0,0,0.1);
         }
-        
+
         .key-cell.red {
             background: #e74c3c;
         }
-        
+
         .key-cell.blue {
             background: #3498db;
         }
-        
+
         .key-cell.spy {
             background: #2c3e50;
         }
-        
+
         .key-cell.civilian {
             background: #bdc3c7;
         }
-        
+
         .status-message {
             text-align: center;
             padding: 20px;
@@ -419,7 +437,7 @@
             color: #2c3e50;
             font-weight: bold;
         }
-        
+
         .instructions {
             background: #e8f5e8;
             border: 1px solid #27ae60;
@@ -427,17 +445,17 @@
             padding: 15px;
             margin-bottom: 20px;
         }
-        
+
         .instructions h3 {
             color: #27ae60;
             margin-top: 0;
         }
-        
+
         .instructions ul {
             margin: 0;
             padding-left: 20px;
         }
-        
+
         .instructions li {
             margin-bottom: 5px;
         }
@@ -447,7 +465,7 @@
     <div class="container">
         <h1 class="title">CODENAMES TRAVEL EDITION</h1>
         <p class="subtitle">Card Generator & Printer</p>
-        
+
         <div class="input-section">
             <div class="instructions">
                 <h3>🎯 How to Create Your Cards</h3>
@@ -460,29 +478,29 @@
                     <li><strong>Keycards:</strong> 40 spymaster cards (5×5 grids) - 20 red start, 20 blue start</li>
                 </ul>
             </div>
-            
+
             <div class="input-group">
                 <label class="input-label" for="wordList">Word List (one per line):</label>
                 <textarea id="wordList" class="word-input" placeholder="ACHAR&#10;ÁFRICA&#10;ÁGUA&#10;AMARELO&#10;AMAZONAS&#10;AMÉRICA&#10;AMOR&#10;ARARA&#10;ASSISTIR&#10;ATO&#10;AZUL&#10;BACIA&#10;BAIXO&#10;BALA&#10;BANCO&#10;BANDEIRANTES&#10;BARATA&#10;BARRA&#10;BATERIA&#10;BATIDA&#10;BEBER&#10;BEIJINHO&#10;BEIRUTE&#10;BEXIGA&#10;BICHO"></textarea>
                 <div class="help-text">Enter any number of words (minimum 4 for a 2x2 grid). Works best with even numbers for balanced cards.</div>
             </div>
-            
+
             <button class="generate-btn" onclick="generateCards()">🎮 Generate Printable Cards</button>
         </div>
-        
+
         <div class="print-section">
             <div class="print-controls" id="printControls" style="display: none;">
                 <button class="print-btn" onclick="window.print()">🖨️ Print All Pages</button>
                 <button class="print-btn" onclick="downloadPDF()">📄 Download PDF</button>
                 <button class="print-btn" onclick="resetGenerator()">🔄 Reset</button>
             </div>
-            
+
             <div class="preview-area" id="previewArea">
                 <!-- Cards will be generated here -->
                 <div id="wordCardsArea"></div>
                 <div id="agentAndKeyCardsArea"></div>
             </div>
-            
+
             <div class="status-message" id="statusMessage">
                 Enter your word list above and click "Generate Printable Cards" to create your custom deck!
             </div>
@@ -495,46 +513,46 @@
         function generateCards() {
             const wordList = document.getElementById('wordList').value.trim();
             const words = wordList.split('\n').map(w => w.trim()).filter(w => w.length > 0);
-            
+
             if (words.length < 4) {
                 alert(`Please enter at least 4 words. You have ${words.length} words.`);
                 return;
             }
-            
+
             // Calculate grid size - largest square that fits all words
             const gridSize = Math.ceil(Math.sqrt(words.length));
             const totalCells = gridSize * gridSize;
-            
+
             const previewArea = document.getElementById('previewArea');
             const wordCardsArea = document.getElementById('wordCardsArea');
             const agentAndKeyCardsArea = document.getElementById('agentAndKeyCardsArea');
             const statusMessage = document.getElementById('statusMessage');
             const printControls = document.getElementById('printControls');
-            
+
             wordCardsArea.innerHTML = '';
             agentAndKeyCardsArea.innerHTML = '';
             previewArea.classList.add('show');
             printControls.style.display = 'flex';
-            
+
             // Update status message
             statusMessage.innerHTML = `Generated ${gridSize}×${gridSize} grid with ${words.length} words<br>
                                + 25 agent cards (8 red, 8 blue, 1 double agent, 1 spy, 7 civilians)<br>
                                + 40 keycards (20 red start, 20 blue start)`;
-            
+
             // Create word cards
             createWordCardPages(words, wordCardsArea);
-            
+
             // Create agent cards based on grid size
             createAgentCardPage(agentAndKeyCardsArea, gridSize);
-            
+
             // Create keycards (40 total - 20 red start, 20 blue start)
             createKeycardPages(agentAndKeyCardsArea);
         }
-        
+
         function generateKeycard(startingTeam) {
             // Create array with the right distribution
             const cells = [];
-            
+
             // Add cells based on starting team
             if (startingTeam === 'red') {
                 cells.push(...Array(9).fill('red'));
@@ -543,59 +561,59 @@
                 cells.push(...Array(9).fill('blue'));
                 cells.push(...Array(8).fill('red'));
             }
-            
+
             cells.push('spy'); // 1 spy
             cells.push(...Array(7).fill('civilian')); // 7 civilians
-            
+
             // Shuffle the array
             for (let i = cells.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [cells[i], cells[j]] = [cells[j], cells[i]];
             }
-            
+
             return cells;
         }
-        
+
         function createWordCardPages(words, container) {
             const cardsPerPage = 16;
             const numCards = Math.ceil(words.length / 2); // Two words per card
             const totalPages = Math.ceil(numCards / cardsPerPage);
-            
+
             for (let pageNum = 0; pageNum < totalPages; pageNum++) {
                 const page = document.createElement('div');
                 page.className = 'page-preview';
-                
+
                 const grid = document.createElement('div');
                 grid.className = 'card-grid';
-                
+
                 const startCardIdx = pageNum * cardsPerPage;
                 const endCardIdx = Math.min(startCardIdx + cardsPerPage, numCards);
-                
+
                 for (let cardIdx = startCardIdx; cardIdx < endCardIdx; cardIdx++) {
                     const card = document.createElement('div');
                     card.className = 'print-card';
-                    
+
                     const wordIdx1 = cardIdx * 2;
                     const wordIdx2 = cardIdx * 2 + 1;
-                    
+
                     const topHalf = document.createElement('div');
                     topHalf.className = 'card-half top';
                     topHalf.textContent = words[wordIdx1] || '';
-                    
+
                     const bottomHalf = document.createElement('div');
                     bottomHalf.className = 'card-half bottom';
                     bottomHalf.textContent = words[wordIdx2] || '';
-                    
+
                     card.appendChild(topHalf);
                     card.appendChild(bottomHalf);
                     grid.appendChild(card);
                 }
-                
+
                 page.appendChild(grid);
                 container.appendChild(page);
             }
         }
-        
+
         function createAgentCardPage(container, gridSize) {
             // Fixed agent distribution: 8 red, 8 blue, 1 double agent, 1 spy, 7 civilians
             const redAgents = 8;
@@ -604,10 +622,10 @@
             const spies = 1;
             const civilians = 7;
             const totalAgentCards = redAgents + blueAgents + doubleAgents + spies + civilians; // 25 cards
-            
+
             const cardsPerPage = 16;
             const totalPages = Math.ceil(totalAgentCards / cardsPerPage);
-            
+
             // Create agent cards array
             const agentCards = [
                 ...Array(redAgents).fill({type: 'red', symbol: '🔥'}),
@@ -616,18 +634,18 @@
                 ...Array(spies).fill({type: 'assassin', symbol: '💀'}),
                 ...Array(civilians).fill({type: 'civilian', symbol: '👤'})
             ];
-            
+
             // Create pages for agent cards
             for (let pageNum = 0; pageNum < totalPages; pageNum++) {
                 const page = document.createElement('div');
                 page.className = 'page-preview';
-                
+
                 const grid = document.createElement('div');
                 grid.className = 'card-grid';
-                
+
                 const startIdx = pageNum * cardsPerPage;
                 const endIdx = Math.min(startIdx + cardsPerPage, totalAgentCards);
-                
+
                 for (let i = startIdx; i < endIdx; i++) {
                     const cardData = agentCards[i];
                     const card = document.createElement('div');
@@ -635,74 +653,74 @@
                     card.textContent = cardData.symbol;
                     grid.appendChild(card);
                 }
-                
+
                 page.appendChild(grid);
                 container.appendChild(page);
             }
         }
-        
+
         function createKeycardPages(container) {
             const keycardsPerPage = 16;
             const totalKeycards = 40; // 20 red start + 20 blue start
             const totalPages = Math.ceil(totalKeycards / keycardsPerPage);
-            
+
             for (let pageNum = 0; pageNum < totalPages; pageNum++) {
                 const page = document.createElement('div');
                 page.className = 'page-preview';
-                
+
                 const grid = document.createElement('div');
                 grid.className = 'card-grid';
-                
+
                 const startCardIdx = pageNum * keycardsPerPage;
                 const endCardIdx = Math.min(startCardIdx + keycardsPerPage, totalKeycards);
-                
+
                 for (let cardIdx = startCardIdx; cardIdx < endCardIdx; cardIdx++) {
                     // First 20 are red start, next 20 are blue start
                     const startingTeam = cardIdx < 20 ? 'red' : 'blue';
                     const keycardData = generateKeycard(startingTeam);
-                    
+
                     const keycard = document.createElement('div');
                     keycard.className = `keycard ${startingTeam}-start`;
-                    
+
                     keycardData.forEach(cellType => {
                         const cell = document.createElement('div');
                         cell.className = `key-cell ${cellType}`;
                         keycard.appendChild(cell);
                     });
-                    
+
                     grid.appendChild(keycard);
                 }
-                
+
                 page.appendChild(grid);
                 container.appendChild(page);
             }
         }
-        
+
         function downloadPDF() {
             const previewArea = document.getElementById('previewArea');
             const wordCardsArea = document.getElementById('wordCardsArea');
             const agentAndKeyCardsArea = document.getElementById('agentAndKeyCardsArea');
-            
+
             if (!previewArea.classList.contains('show')) {
                 alert('Please generate cards first before downloading PDF.');
                 return;
             }
-            
+
             // Show loading message
             const originalText = document.querySelector('[onclick="downloadPDF()"]').textContent;
             document.querySelector('[onclick="downloadPDF()"]').textContent = '⏳ Generating PDF...';
             document.querySelector('[onclick="downloadPDF()"]').disabled = true;
-            
+
             try {
                 // Configure PDF options with explicit page-break control
                 const options = {
                     margin: 0,
                     filename: 'codenames-travel-cards-word-cards.pdf',
-                    image: { 
-                        type: 'png', 
-                        quality: 0.92 
+                    image: {
+                        type: 'png',
+                        quality: 0.92
                     },
-                    html2canvas: { 
+                    html2canvas: {
                         scale: 1.5,
                         useCORS: true,
                         allowTaint: true,
@@ -710,9 +728,9 @@
                         scrollX: 0,
                         scrollY: 0
                     },
-                    jsPDF: { 
-                        unit: 'mm', 
-                        format: 'a4', 
+                    jsPDF: {
+                        unit: 'mm',
+                        format: 'a4',
                         orientation: 'portrait'
                     },
                     pagebreak: {
@@ -721,7 +739,7 @@
                         avoid: '.print-card'
                     }
                 };
-                
+
                 // Generate PDF and filter out empty odd pages
                 html2pdf()
                     .set(options)
@@ -748,11 +766,11 @@
                         document.querySelector('[onclick="downloadPDF()"]').textContent = originalText;
                         document.querySelector('[onclick="downloadPDF()"]').disabled = false;
                     });
-                    
+
             } catch (error) {
                 console.error('Error in downloadPDF function:', error);
                 alert('PDF library not loaded. Please try using the Print button and save as PDF.');
-                
+
                 // Reset button
                 document.querySelector('[onclick="downloadPDF()"]').textContent = originalText;
                 document.querySelector('[onclick="downloadPDF()"]').disabled = false;
@@ -774,7 +792,7 @@
 
             return pdf;
         }
-        
+
         function resetGenerator() {
             document.getElementById('wordList').value = '';
             document.getElementById('previewArea').classList.remove('show');
@@ -782,7 +800,7 @@
             document.getElementById('previewArea').innerHTML = '';
             document.getElementById('statusMessage').innerHTML = 'Enter your word list above and click "Generate Printable Cards" to create your custom deck!';
         }
-        
+
         // Load default words on page load
         window.addEventListener('load', function() {
             // Check if html2pdf is loaded
@@ -794,7 +812,7 @@
                     pdfBtn.style.display = 'none';
                 }
             }
-            
+
             const defaultWords = `ACHAR
 ÁFRICA
 ÁGUA
