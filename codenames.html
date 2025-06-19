@@ -373,12 +373,7 @@
 
         /* Keycard styles - simplified for PDF */
         .keycard {
-            width: 45mm;
-            height: 68mm;
             border: 1mm solid #333;
-            position: relative;
-            background: white;
-            overflow: hidden;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 1fr);
@@ -665,7 +660,7 @@
                     const keycardData = generateKeycard(startingTeam);
 
                     const keycard = document.createElement('div');
-                    keycard.className = `keycard ${startingTeam}-start`;
+                    keycard.className = `print-card keycard ${startingTeam}-start`;
 
                     keycardData.forEach(cellType => {
                         const cell = document.createElement('div');
