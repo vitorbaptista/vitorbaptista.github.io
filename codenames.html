@@ -248,7 +248,7 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
             gap: 2mm;
             padding: 7mm;
             width: 210mm;
@@ -257,8 +257,8 @@
         }
         
         .print-card {
-            width: 42mm;
-            height: 52mm;
+            width: 45mm;
+            height: 68mm;
             border: 1px solid #ddd;
             border-radius: 3mm;
             position: relative;
@@ -346,8 +346,8 @@
         
         /* Keycard styles - simplified for PDF */
         .keycard {
-            width: 42mm;
-            height: 52mm;
+            width: 45mm;
+            height: 68mm;
             border: 2px solid #333;
             border-radius: 3mm;
             position: relative;
@@ -557,7 +557,7 @@
         }
         
         function createWordCardPages(words, container) {
-            const cardsPerPage = 20;
+            const cardsPerPage = 16;
             const numCards = Math.ceil(words.length / 2); // Two words per card
             const totalPages = Math.ceil(numCards / cardsPerPage);
             
@@ -605,7 +605,7 @@
             const civilians = 7;
             const totalAgentCards = redAgents + blueAgents + doubleAgents + spies + civilians; // 25 cards
             
-            const cardsPerPage = 20;
+            const cardsPerPage = 16;
             const totalPages = Math.ceil(totalAgentCards / cardsPerPage);
             
             // Create agent cards array
@@ -642,7 +642,7 @@
         }
         
         function createKeycardPages(container) {
-            const keycardsPerPage = 20;
+            const keycardsPerPage = 16;
             const totalKeycards = 40; // 20 red start + 20 blue start
             const totalPages = Math.ceil(totalKeycards / keycardsPerPage);
             
