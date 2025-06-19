@@ -359,7 +359,7 @@
         .keycard {
             width: 45mm;
             height: 68mm;
-            border: 2px solid #333;
+            border: 1mm solid #333;
             border-radius: 3mm;
             position: relative;
             background: white;
@@ -378,28 +378,6 @@
 
         .keycard.blue-start {
             border-color: #3498db;
-        }
-
-        .keycard::before {
-            content: '';
-            position: absolute;
-            top: -1mm;
-            left: -1mm;
-            right: -1mm;
-            bottom: -1mm;
-            border: 1px dashed #999;
-            pointer-events: none;
-        }
-
-        .keycard::after {
-            content: '';
-            position: absolute;
-            top: -2mm;
-            left: -2mm;
-            right: -2mm;
-            bottom: -2mm;
-            border: 0.5px dotted #666;
-            pointer-events: none;
         }
 
         .key-cell {
