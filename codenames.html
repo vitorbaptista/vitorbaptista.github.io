@@ -282,10 +282,13 @@
             position: relative;
             background: white;
             overflow: hidden;
+            display: flex;
+            flex-direction: row;
         }
 
         .card-half {
-            height: 50%;
+            width: 50%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -306,6 +309,16 @@
         .card-half.bottom {
             background: #ecf0f1;
             color: #2c3e50;
+        }
+
+        .card-half.top span {
+            transform: rotate(90deg);
+            display: inline-block;
+        }
+
+        .card-half.bottom span {
+            transform: rotate(-90deg);
+            display: inline-block;
         }
 
         .agent-card {
@@ -336,6 +349,11 @@
 
         .agent-card.assassin {
             background: linear-gradient(135deg, #2c3e50, #1a252f);
+        }
+
+        .agent-card span {
+            transform: rotate(90deg);
+            display: inline-block;
         }
 
         /* Keycard styles - simplified for PDF */
@@ -574,11 +592,15 @@
 
                     const topHalf = document.createElement('div');
                     topHalf.className = 'card-half top';
-                    topHalf.textContent = words[wordIdx1] || '';
+                    const topSpan = document.createElement('span');
+                    topSpan.textContent = words[wordIdx1] || '';
+                    topHalf.appendChild(topSpan);
 
                     const bottomHalf = document.createElement('div');
                     bottomHalf.className = 'card-half bottom';
-                    bottomHalf.textContent = words[wordIdx2] || '';
+                    const bottomSpan = document.createElement('span');
+                    bottomSpan.textContent = words[wordIdx2] || '';
+                    bottomHalf.appendChild(bottomSpan);
 
                     card.appendChild(topHalf);
                     card.appendChild(bottomHalf);
@@ -626,7 +648,9 @@
                     const cardData = agentCards[i];
                     const card = document.createElement('div');
                     card.className = `print-card agent-card ${cardData.type}`;
-                    card.textContent = cardData.symbol;
+                    const span = document.createElement('span');
+                    span.textContent = cardData.symbol;
+                    card.appendChild(span);
                     grid.appendChild(card);
                 }
 
