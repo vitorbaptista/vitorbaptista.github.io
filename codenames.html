@@ -283,31 +283,7 @@
             background: white;
             overflow: hidden;
         }
-        
-        /* Bleed area - simplified for PDF */
-        .print-card::before {
-            content: '';
-            position: absolute;
-            top: -1mm;
-            left: -1mm;
-            right: -1mm;
-            bottom: -1mm;
-            border: 1px dashed #999;
-            pointer-events: none;
-        }
-        
-        /* Cut lines - simplified for PDF */
-        .print-card::after {
-            content: '';
-            position: absolute;
-            top: -2mm;
-            left: -2mm;
-            right: -2mm;
-            bottom: -2mm;
-            border: 0.5px dotted #666;
-            pointer-events: none;
-        }
-        
+
         .card-half {
             height: 50%;
             display: flex;
