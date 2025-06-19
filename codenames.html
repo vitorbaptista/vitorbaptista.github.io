@@ -569,7 +569,7 @@
 
         function createWordCardPages(words, container) {
             const cardsPerPage = 16;
-            const numCards = Math.ceil(words.length / 2); // Two words per card
+            const numCards = words.length; // One word per card now
             const totalPages = Math.ceil(numCards / cardsPerPage);
 
             for (let pageNum = 0; pageNum < totalPages; pageNum++) {
@@ -586,19 +586,18 @@
                     const card = document.createElement('div');
                     card.className = 'print-card';
 
-                    const wordIdx1 = cardIdx * 2;
-                    const wordIdx2 = cardIdx * 2 + 1;
+                    const word = words[cardIdx];
 
                     const topHalf = document.createElement('div');
                     topHalf.className = 'card-half top';
                     const topSpan = document.createElement('span');
-                    topSpan.textContent = words[wordIdx1] || '';
+                    topSpan.textContent = word;
                     topHalf.appendChild(topSpan);
 
                     const bottomHalf = document.createElement('div');
                     bottomHalf.className = 'card-half bottom';
                     const bottomSpan = document.createElement('span');
-                    bottomSpan.textContent = words[wordIdx2] || '';
+                    bottomSpan.textContent = word;
                     bottomHalf.appendChild(bottomSpan);
 
                     card.appendChild(topHalf);
