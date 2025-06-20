@@ -21,7 +21,7 @@
             /* Word card colors */
             --word-dark: #3e5770;
             --word-light: #ecf0f1;
-            --word-dark-text: white;
+            --word-dark-text: #ffffffbb;
             --word-light-text: #2c3e50;
 
             /* Neutral colors */
@@ -343,13 +343,12 @@
         }
 
         .card-half {
-            width: 50%;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 20pt;
+            font-size: 24pt;
             position: relative;
             word-wrap: break-word;
             padding: 2mm;
@@ -360,20 +359,22 @@
         .card-half.top {
             background: var(--word-dark);
             color: var(--word-dark-text);
+            width: 25%;
         }
 
         .card-half.bottom {
             background: var(--word-light);
             color: var(--word-light-text);
+            width: 75%;
         }
 
         .card-half.top span {
-            transform: rotate(90deg);
+            transform: rotate(-90deg);
             display: inline-block;
         }
 
         .card-half.bottom span {
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
             display: inline-block;
         }
 
