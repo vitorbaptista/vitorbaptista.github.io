@@ -17,6 +17,8 @@
             --red-dark: #c0392b;
             --blue-primary: #3498db;
             --blue-dark: #2980b9;
+            --green-primary: #2ecc71;
+            --green-dark: #27ae60;
 
             /* Word card colors */
             --word-dark: #3e5770;
@@ -394,6 +396,10 @@
             background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
         }
 
+        .agent-card.green {
+            background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+        }
+
         .agent-card.spy {
             background: linear-gradient(45deg, var(--red-primary) 0%, var(--red-primary) 50%, var(--blue-primary) 50%, var(--blue-primary) 100%);
             position: relative;
@@ -643,10 +649,11 @@
             // Fixed agent distribution: 8 red, 8 blue, 1 double agent, 1 spy, 7 civilians
             const redAgents = 8;
             const blueAgents = 8;
+            const greenAgents = 16;  // Should be 15, but as we're printing front and back, we make 16 to keep it cleaner
             const doubleAgents = 1;
-            const spies = 1;
-            const civilians = 7;
-            const totalAgentCards = redAgents + blueAgents + doubleAgents + spies + civilians; // 25 cards
+            const spies = 5;  // 1 for the usual game, +4 for the duet
+            const civilians = 9;  // 7 for the usual game, +2 for the duet
+            const totalAgentCards = redAgents + blueAgents + greenAgents + doubleAgents + spies + civilians; // 25 cards
 
             const cardsPerPage = 16;
             const totalPages = Math.ceil(totalAgentCards / cardsPerPage);
@@ -655,6 +662,7 @@
             const agentCards = [
                 ...Array(redAgents).fill({type: 'red', symbol: '🔥'}),
                 ...Array(blueAgents).fill({type: 'blue', symbol: '💧'}),
+                ...Array(greenAgents).fill({type: 'green', symbol: '🌳'}),
                 ...Array(doubleAgents).fill({type: 'spy', symbol: '⚡'}),
                 ...Array(spies).fill({type: 'assassin', symbol: '💀'}),
                 ...Array(civilians).fill({type: 'civilian', symbol: '👤'})
