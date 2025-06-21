@@ -420,7 +420,7 @@
 
         /* Keycard styles - simplified for PDF */
         .keycard {
-            border: 1mm solid var(--border-dark);
+            border: 2mm solid var(--border-dark);
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 1fr);
@@ -430,6 +430,7 @@
             /* Rounded corners to indicate card orientation */
             border-top-left-radius: 5mm;
             border-bottom-left-radius: 5mm;
+            position: relative;
         }
 
         .keycard.red-start {
@@ -438,6 +439,28 @@
 
         .keycard.blue-start {
             border-color: var(--blue-primary);
+        }
+
+        .keycard.duet-keycard {
+            border-color: var(--primary-dark);
+        }
+
+        .pair-indicator {
+            position: absolute;
+            top: 1mm;
+            left: 1mm;
+            background: var(--primary-dark);
+            color: white;
+            width: 6mm;
+            height: 6mm;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12pt;
+            z-index: 10;
+            transform: rotate(-90deg);
         }
 
         .key-cell {
@@ -458,6 +481,18 @@
 
         .key-cell.civilian {
             background: var(--gray-light);
+        }
+
+        .key-cell.green {
+            background: var(--green-primary);
+        }
+
+        .key-cell.black {
+            background: var(--black);
+        }
+
+        .key-cell.grey {
+            background: var(--gray-medium);
         }
 
         .status-message {
@@ -564,8 +599,9 @@
 
             // Update status message
             statusMessage.innerHTML = `Gerado grade ${gridSize}×${gridSize} com ${words.length} palavras<br>
-                               + 25 cartas de agente (8 vermelhos, 8 azuis, 1 agente duplo, 1 espião, 7 civis)<br>
-                               + 40 cartas-chave (20 início vermelho, 20 início azul)`;
+                               + 48 cartas de agente (8 vermelhos, 8 azuis, 16 verdes, 1 agente duplo, 5 espiões, 10 civis)<br>
+                               + 32 cartas-chave (16 início vermelho, 16 início azul)<br>
+                               + 16 cartas-chave duet`;
 
             // Create word cards
             createWordCardPages(words, wordCardsArea);
@@ -573,8 +609,11 @@
             // Create agent cards based on grid size
             createAgentCardPage(agentAndKeyCardsArea, gridSize);
 
-            // Create keycards (40 total - 20 red start, 20 blue start)
+            // Create keycards
             createKeycardPages(agentAndKeyCardsArea);
+
+            // Create duet keycards
+            createKeycardsDuetPages(agentAndKeyCardsArea);
         }
 
         function generateKeycard(startingTeam) {
@@ -652,7 +691,7 @@
             const greenAgents = 16;  // Should be 15, but as we're printing front and back, we make 16 to keep it cleaner
             const doubleAgents = 1;
             const spies = 5;  // 1 for the usual game, +4 for the duet
-            const civilians = 9;  // 7 for the usual game, +2 for the duet
+            const civilians = 10;  // 7 for the usual game, +2 for the duet, +1 extra
             const totalAgentCards = redAgents + blueAgents + greenAgents + doubleAgents + spies + civilians; // 25 cards
 
             const cardsPerPage = 16;
@@ -696,7 +735,7 @@
 
         function createKeycardPages(container) {
             const keycardsPerPage = 16;
-            const totalKeycards = 40; // 20 red start + 20 blue start
+            const totalKeycards = keycardsPerPage * 2; // 20 red start + 20 blue start
             const totalPages = Math.ceil(totalKeycards / keycardsPerPage);
 
             for (let pageNum = 0; pageNum < totalPages; pageNum++) {
@@ -711,7 +750,7 @@
 
                 for (let cardIdx = startCardIdx; cardIdx < endCardIdx; cardIdx++) {
                     // First 20 are red start, next 20 are blue start
-                    const startingTeam = cardIdx < 20 ? 'red' : 'blue';
+                    const startingTeam = cardIdx < totalKeycards / 2 ? 'red' : 'blue';
                     const keycardData = generateKeycard(startingTeam);
 
                     const keycard = document.createElement('div');
@@ -729,6 +768,167 @@
                 page.appendChild(grid);
                 container.appendChild(page);
             }
+        }
+
+        function createKeycardsDuetPages(container) {
+            // The keycards requirements:
+            // 1. There are 10 cards
+            // 2. The cards are in pairs. They're supposed to be played together, one for each team. Add somewhere in the card a letter starting from A. The pairs of keycards share the same letter, so we know they're the pair.
+            // 3. The keycards have 9 green cells, 3 black cells, and 13 grey cells
+            // 4. On the same keycard pair, we have:
+            // 4.1. The green cells on each pair share 3 cells on the same spot and 6 on different spots
+            // 4.2. The black cells on each pair share 1 on the same spot, 1 is on the green spot of the other card, and 1 is on the grey spot.
+
+            const keycardsPerPage = 16;
+            const totalKeycards = 16; // 5 pairs (A, B, C, D, E)
+            const totalPages = Math.ceil(totalKeycards / keycardsPerPage);
+
+            // Generate 5 pairs of keycards
+            const keycardPairs = [];
+            for (let pairIndex = 0; pairIndex < totalKeycards / 2; pairIndex++) {
+                const pairLetter = String.fromCharCode(65 + pairIndex); // A, B, C, D, E
+                const pair = generateDuetKeycardPair(pairLetter);
+                keycardPairs.push(...pair);
+            }
+
+            // Create pages for duet keycards
+            for (let pageNum = 0; pageNum < totalPages; pageNum++) {
+                const page = document.createElement('div');
+                page.className = 'page-preview';
+
+                const grid = document.createElement('div');
+                grid.className = 'card-grid';
+
+                const startCardIdx = pageNum * keycardsPerPage;
+                const endCardIdx = Math.min(startCardIdx + keycardsPerPage, totalKeycards);
+
+                for (let cardIdx = startCardIdx; cardIdx < endCardIdx; cardIdx++) {
+                    const keycardData = keycardPairs[cardIdx];
+
+                    const keycard = document.createElement('div');
+                    keycard.className = 'print-card keycard duet-keycard';
+                    keycard.setAttribute('data-pair', keycardData.pairLetter);
+
+                    // Add pair letter indicator
+                    const pairIndicator = document.createElement('div');
+                    pairIndicator.className = 'pair-indicator';
+                    pairIndicator.textContent = keycardData.pairLetter;
+                    keycard.appendChild(pairIndicator);
+
+                    keycardData.cells.forEach(cellType => {
+                        const cell = document.createElement('div');
+                        cell.className = `key-cell ${cellType}`;
+                        keycard.appendChild(cell);
+                    });
+
+                    grid.appendChild(keycard);
+                }
+
+                page.appendChild(grid);
+                container.appendChild(page);
+            }
+        }
+
+        function generateDuetKeycardPair(pairLetter) {
+            // Create 5x5 grid (25 cells total)
+            const gridSize = 5;
+            const totalCells = gridSize * gridSize;
+
+            // Requirements: 9 green, 3 black, 13 grey
+            const greenCount = 9;
+            const blackCount = 3;
+            const greyCount = 13;
+
+            // Generate first card
+            const card1 = generateDuetKeycard(greenCount, blackCount, greyCount, gridSize);
+
+            // Generate second card with the pairing rules
+            const card2 = generatePairedDuetKeycard(card1, greenCount, blackCount, greyCount, gridSize);
+
+            return [
+                { cells: card1, pairLetter: pairLetter },
+                { cells: card2, pairLetter: pairLetter }
+            ];
+        }
+
+        function generateDuetKeycard(greenCount, blackCount, greyCount, gridSize) {
+            const cells = [];
+
+            // Add cells in the required quantities
+            cells.push(...Array(greenCount).fill('green'));
+            cells.push(...Array(blackCount).fill('black'));
+            cells.push(...Array(greyCount).fill('grey'));
+
+            // Shuffle the array
+            for (let i = cells.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cells[i], cells[j]] = [cells[j], cells[i]];
+            }
+
+            return cells;
+        }
+
+        function generatePairedDuetKeycard(card1, greenCount, blackCount, greyCount, gridSize) {
+            // Initialize card2 with all NULL cells
+            const card2 = Array(card1.length).fill(null);
+
+            // Get black positions from card1 and shuffle them
+            const blackPositions1 = card1.map((cell, index) => ({ cell, index })).filter(item => item.cell === 'black');
+            const shuffledBlackPositions = [...blackPositions1].sort(() => Math.random() - 0.5);
+
+            // Process black cells according to the rules
+            // First black: stays black in card2
+            card2[shuffledBlackPositions[0].index] = 'black';
+            // Second black: becomes green in card2
+            card2[shuffledBlackPositions[1].index] = 'green';
+            // Third black: becomes grey in card2
+            card2[shuffledBlackPositions[2].index] = 'grey';
+
+            // Get green positions from card1 and shuffle them
+            const greenPositions1 = card1.map((cell, index) => ({ cell, index })).filter(item => item.cell === 'green');
+            const shuffledGreenPositions = [...greenPositions1].sort(() => Math.random() - 0.5);
+
+            // Process green cells according to the rules
+            // First three greens: stay green in card2
+            for (let i = 0; i < Math.min(3, shuffledGreenPositions.length); i++) {
+                card2[shuffledGreenPositions[i].index] = 'green';
+            }
+            // Fourth green: becomes black in card2
+            card2[shuffledGreenPositions[3].index] = 'black';
+            // Remaining greens: become grey in card2
+            for (let i = 4; i < shuffledGreenPositions.length; i++) {
+                card2[shuffledGreenPositions[i].index] = 'grey';
+            }
+
+            // Fill remaining NULL cells to complete the requirements
+            const currentGreenCount = card2.filter(cell => cell === 'green').length;
+            const currentBlackCount = card2.filter(cell => cell === 'black').length;
+            const currentGreyCount = card2.filter(cell => cell === 'grey').length;
+
+            // Find NULL positions
+            const nullPositions = card2.map((cell, index) => ({ cell, index })).filter(item => item.cell === null);
+
+            // Add greens to reach 9 total
+            const greensNeeded = greenCount - currentGreenCount;
+            for (let i = 0; i < Math.min(greensNeeded, nullPositions.length); i++) {
+                card2[nullPositions[i].index] = 'green';
+            }
+
+            // Add blacks to reach 3 total
+            const blacksNeeded = blackCount - currentBlackCount;
+            const remainingNullPositions = card2.map((cell, index) => ({ cell, index })).filter(item => item.cell === null);
+            for (let i = 0; i < Math.min(blacksNeeded, remainingNullPositions.length); i++) {
+                card2[remainingNullPositions[i].index] = 'black';
+            }
+
+            // Fill remaining NULL cells with grey
+            card2.forEach((cell, index) => {
+                if (cell === null) {
+                    card2[index] = 'grey';
+                }
+            });
+
+            return card2;
         }
 
         // Load default words on page load
