@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Teste auditivo caseiro em pt-BR, sem servidor, com listas comparáveis, reprodução de áudio e histórico local."
+    />
+    <title>Teste auditivo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23126b63'/%3E%3Cpath d='M21 30c0-8 5-14 13-14 7 0 12 5 12 12 0 6-3 9-7 12-3 2-4 4-4 8h-8c0-7 3-10 7-13 3-2 4-4 4-7 0-3-2-5-5-5-4 0-6 3-6 8h-6Z' fill='white'/%3E%3Ccircle cx='31' cy='54' r='4' fill='white'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <div>
+        <p class="rotulo">Sem servidor, salvo neste aparelho</p>
+        <h1>Teste auditivo</h1>
+      </div>
+      <div class="acoes-topo">
+        <button class="botao secundario pequeno" id="botaoReiniciar" type="button">
+          Nova rodada
+        </button>
+        <button class="botao secundario pequeno" id="botaoTrocarPalavras" type="button">
+          Trocar palavras
+        </button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="painel painel-configuracao" aria-labelledby="tituloConfiguracao">
+        <div class="cabecalho-painel">
+          <h2 id="tituloConfiguracao">Configuração</h2>
+          <span class="selo" id="statusAudio">Áudio pronto</span>
+        </div>
+
+        <label class="campo">
+          <span>Tipo de rodada</span>
+          <select id="seletorLista"></select>
+        </label>
+        <p class="ajuda">
+          Nova rodada mantém os itens. Trocar palavras sorteia outros itens antes de começar.
+        </p>
+
+        <label class="campo">
+          <span>Nome do ajuste</span>
+          <input
+            id="campoAjuste"
+            type="text"
+            autocomplete="off"
+            placeholder="Ex.: Ajuste 1, volume 3"
+          />
+        </label>
+
+        <label class="campo">
+          <span>Origem do áudio</span>
+          <select id="seletorAudio">
+            <option value="voz">Voz do aparelho</option>
+            <option value="mp3">Arquivos MP3 locais</option>
+          </select>
+        </label>
+
+        <label class="campo">
+          <span>Voz</span>
+          <select id="seletorVoz"></select>
+        </label>
+
+        <div class="grade-controles">
+          <label class="campo">
+            <span>Velocidade</span>
+            <input id="controleVelocidade" type="range" min="0.7" max="1.1" step="0.05" />
+            <strong id="valorVelocidade"></strong>
+          </label>
+
+          <label class="campo">
+            <span>Volume</span>
+            <input id="controleVolume" type="range" min="0.1" max="1" step="0.05" />
+            <strong id="valorVolume"></strong>
+          </label>
+        </div>
+
+        <label class="alternador">
+          <input id="alternadorOcultar" type="checkbox" />
+          <span>Ocultar palavra durante a reprodução</span>
+        </label>
+
+        <label class="campo">
+          <span>Observações da rodada</span>
+          <textarea
+            id="campoObservacoes"
+            rows="4"
+            placeholder="Ex.: aparelho direito +2 agudos, sala silenciosa"
+          ></textarea>
+        </label>
+      </section>
+
+      <section class="palco" aria-labelledby="tituloRodada">
+        <div class="linha-progresso" aria-label="Progresso da rodada">
+          <span id="textoProgresso">Item 1 de 10</span>
+          <progress id="barraProgresso" value="1" max="10"></progress>
+        </div>
+
+        <div class="painel painel-teste">
+          <div class="cabecalho-painel">
+            <div>
+              <p class="rotulo" id="grupoFonema">Som-alvo</p>
+              <h2 id="tituloRodada">Rodada atual</h2>
+            </div>
+            <span class="placar" id="placarAtual">0/10</span>
+          </div>
+
+          <div class="termo" id="termoAtual" aria-live="polite">pato</div>
+
+          <div class="acoes-principais">
+            <button class="botao primario botao-play" id="botaoTocar" type="button">
+              <span aria-hidden="true">▶</span>
+              Tocar
+            </button>
+            <button class="botao correto" id="botaoAcertou" type="button">
+              Acertou
+            </button>
+            <button class="botao erro" id="botaoErrou" type="button">
+              Errou
+            </button>
+          </div>
+
+          <div class="acoes-secundarias">
+            <button class="botao secundario" id="botaoAnterior" type="button">
+              Anterior
+            </button>
+            <button class="botao secundario" id="botaoProximo" type="button">
+              Próximo
+            </button>
+            <button class="botao secundario" id="botaoLimparItem" type="button">
+              Limpar item
+            </button>
+          </div>
+        </div>
+
+        <section class="painel" aria-labelledby="tituloItens">
+          <div class="cabecalho-painel">
+            <h2 id="tituloItens">Itens da rodada</h2>
+            <span class="selo discreto" id="resumoLista">Palavras curtas</span>
+          </div>
+          <ol class="lista-itens" id="listaItens"></ol>
+        </section>
+
+        <section class="painel painel-resultado" aria-labelledby="tituloResultado">
+          <div class="cabecalho-painel">
+            <h2 id="tituloResultado">Resultado</h2>
+            <span class="selo" id="statusRodada">Em andamento</span>
+          </div>
+
+          <div class="resumo-resultado">
+            <div>
+              <span>Acertos</span>
+              <strong id="resultadoAcertos">0</strong>
+            </div>
+            <div>
+              <span>Erros</span>
+              <strong id="resultadoErros">0</strong>
+            </div>
+            <div>
+              <span>Taxa</span>
+              <strong id="resultadoTaxa">0%</strong>
+            </div>
+          </div>
+
+          <div class="erros-fonema">
+            <h3>Erros por som-alvo</h3>
+            <ul id="listaErrosFonema"></ul>
+          </div>
+
+          <div class="acoes-secundarias">
+            <button class="botao primario" id="botaoSalvarResultado" type="button">
+              Salvar resultado
+            </button>
+            <button class="botao secundario" id="botaoExportar" type="button">
+              Exportar CSV
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <aside class="painel painel-historico" aria-labelledby="tituloHistorico">
+        <div class="cabecalho-painel">
+          <h2 id="tituloHistorico">Histórico local</h2>
+          <button class="botao texto" id="botaoApagarHistorico" type="button">
+            Apagar
+          </button>
+        </div>
+
+        <div class="comparacao" id="comparacaoHistorico">
+          Nenhuma rodada salva ainda.
+        </div>
+
+        <ol class="historico" id="listaHistorico"></ol>
+      </aside>
+    </main>
+
+    <footer class="rodape">
+      <p>
+        Ferramenta caseira de comparação. Ela não substitui avaliação com
+        fonoaudiólogo ou otorrinolaringologista.
+      </p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
